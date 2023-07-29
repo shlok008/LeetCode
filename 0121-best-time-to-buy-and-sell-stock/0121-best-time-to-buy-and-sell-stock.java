@@ -1,6 +1,34 @@
 class Solution {
     public int maxProfit(int[] p) {
-        int b=p[0];
+        int pro=0;
+        int min=p[0];
+        for(int i=1;i<p.length;++i)
+        {
+            if(p[i]-min>pro) pro=p[i]-min;
+            else if(p[i]-min<0)min=p[i];
+        }
+        return pro;
+    }
+}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*int b=p[0];
         int s=-9999;
         int t=0;
         
@@ -20,7 +48,6 @@ class Solution {
                 else;
             }
         }
-        return t;
-    }
-}
+        
+        return t;*/
 
