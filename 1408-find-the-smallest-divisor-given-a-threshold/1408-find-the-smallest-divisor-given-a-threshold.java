@@ -7,7 +7,7 @@ class Solution {
         {
             int mid=(start+end)/2;
             int sum=0;
-            for(int i=0;i<num.length;++i) sum+=Math.ceil(num[i]*1.0/mid);
+            for(int i=0;i<num.length;++i) {sum+=Math.ceil(num[i]*1.0/mid);if(sum>th)break;}
             if(sum<=th) {ans=mid;end=mid-1;}
             else start=mid+1;
         }
