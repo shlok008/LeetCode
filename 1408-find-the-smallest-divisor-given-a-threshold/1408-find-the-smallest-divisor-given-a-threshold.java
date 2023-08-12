@@ -2,7 +2,7 @@ class Solution {
     public int smallestDivisor(int[] num, int th) {
         int start=1;
         int end=1000000;
-        int ans=100000;
+        int ans=1000;
         while(start<=end)
         {
             int mid=(start+end)/2;
