@@ -2,7 +2,7 @@ class Solution {
     public int minDays(int[] bd, int m, int k) {
         int end=bd[0];
         for(int i=1;i<bd.length;++i) if(end<bd[i])end=bd[i];
-        int start=0;
+        int start=1;
         int ans=-1;
         while(start<=end)
         {
