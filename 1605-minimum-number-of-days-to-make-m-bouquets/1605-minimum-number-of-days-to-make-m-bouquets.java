@@ -21,7 +21,7 @@ class Solution {
                         c=0;
                     }
                 }
-                else {if(bd.length-k<j)break;c=0;}
+                else {if(bd.length-k==j)break;c=0;}
             }
             if(ans==mid) end=mid-1;
             else start=mid+1;
