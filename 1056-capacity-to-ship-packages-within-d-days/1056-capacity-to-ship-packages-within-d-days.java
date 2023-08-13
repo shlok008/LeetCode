@@ -1,8 +1,8 @@
 class Solution {
     public int shipWithinDays(int[] wt, int d) {
         int start=1;
-        int end=wt[0];
-        for(int i=1;i<wt.length;++i) end+=wt[i];
+        int end=1000000000;
+        //for(int i=1;i<wt.length;++i) end+=wt[i];
         int ans=Integer.MAX_VALUE;
         while(start<=end)
         {
