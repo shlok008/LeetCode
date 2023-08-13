@@ -1,7 +1,7 @@
 class Solution {
     public int minEatingSpeed(int[] p, int h) {
-        int end=p[0];
-        for(int i=1;i<p.length;++i) if(end<p[i])end=p[i];
+        int end=(int)1e9;
+        //for(int i=1;i<p.length;++i) if(end<p[i])end=p[i];
         int start=1;
         int a=0;
         while(start<=end)
