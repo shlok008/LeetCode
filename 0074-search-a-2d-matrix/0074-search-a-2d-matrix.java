@@ -6,7 +6,7 @@ class Solution {
         {
             int mid=(start+end)/2;
             int m=mid/mat[0].length;
-            int n=mid-m*mat[0].length;
+            int n=mid%mat[0].length;
             if(tar==mat[m][n]) return true;
             else if(tar>mat[m][n])start=mid+1;
             else end=mid-1;
