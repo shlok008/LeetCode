@@ -1,14 +1,13 @@
 class Solution {
-    public int majorityElement(int[] nums) {
-        for(int i=0;i<=nums.length/2;++i)
+    public int majorityElement(int[] n) {
+        int el=-1;
+        int cnt=0;
+        for(int i=0;i<n.length;++i)
         {
-            int m=i;
-            for(int j=i+1;j<nums.length;++j)
-            {
-                if(nums[j]<nums[m]) m=j;
-            }
-            if(i!=m){nums[i]+=nums[m];nums[m]=nums[i]-nums[m];nums[i]-=nums[m];}
+            if(cnt==0) {el=n[i];cnt++;}
+            else if(n[i]==el) cnt++;
+            else cnt--;
         }
-        return nums[nums.length/2];
+        return el;
     }
 }
