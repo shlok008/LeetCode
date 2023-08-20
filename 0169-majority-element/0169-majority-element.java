@@ -4,6 +4,7 @@ class Solution {
         int cnt=0;
         for(int i=0;i<n.length;++i)
         {
+            if(cnt==n.length-i)break;
             if(cnt==0) {el=n[i];cnt++;}
             else if(n[i]==el) cnt++;
             else cnt--;
