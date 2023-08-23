@@ -10,8 +10,27 @@
  * }
  */
 public class Solution {
-    public ListNode getIntersectionNode(ListNode a, ListNode b) {
-        ListNode t=a;
+    public ListNode getIntersectionNode(ListNode a, ListNode b) 
+    {
+        ListNode m=a;
+        ListNode n=b;
+        HashMap<ListNode,Boolean> map=new HashMap<>();
+        while(m!=null)
+        {
+            map.put(m,true);
+            m=m.next;
+        }
+        while(n!=null){
+            if(map.get(n)!=null)
+                return n;
+            n=n.next;
+        }
+        return null;
+        
+    }
+}
+
+/*ListNode t=a;
         while(t!=null)
         {
             ListNode ptr=b;
@@ -20,5 +39,4 @@ public class Solution {
             else return t;
         }
         return null;
-    }
-}
+        */
