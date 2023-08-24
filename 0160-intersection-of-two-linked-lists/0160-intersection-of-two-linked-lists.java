@@ -12,6 +12,21 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode a, ListNode b) 
     {
+        if(a==null || b==null) return null;
+
+        ListNode m=a;
+        ListNode n=b;
+        while(m!=n)
+        {
+            if(m==null)m=b;
+            else if(n==null)n=a;
+            else{m=m.next;n=n.next;}
+        }
+        return m;
+    }
+}
+
+        /*
         ListNode m=a;
         ListNode n=b;
         HashMap<ListNode,Boolean> map=new HashMap<>();
@@ -26,11 +41,10 @@ public class Solution {
             n=n.next;
         }
         return null;
-        
-    }
-}
+        */
 
-/*ListNode t=a;
+        /*
+        ListNode t=a;
         while(t!=null)
         {
             ListNode ptr=b;
