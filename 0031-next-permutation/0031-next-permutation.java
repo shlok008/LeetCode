@@ -25,6 +25,7 @@ class Solution {
             n[i]=n[t];
             n[t]=b;
         }
+        System.gc();
         return n;
     }
 }
