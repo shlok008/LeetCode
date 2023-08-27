@@ -12,9 +12,9 @@ class Solution {
                 if(n[mid]>n[a-1]) start=mid+1;
                 else end=mid-1;
             }
-            n[a-1]+=n[end];
-            n[end]=n[a-1]-n[end];
-            n[a-1]=n[a-1]-n[end];
+            int t=n[a-1];
+            n[a-1]=n[end];
+            n[end]=t;
         }
         for(int i=a;i<n.length;++i)
         {
@@ -25,7 +25,6 @@ class Solution {
             n[i]=n[t];
             n[t]=b;
         }
-        System.gc();
         return n;
     }
 }
