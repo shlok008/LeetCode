@@ -18,10 +18,7 @@ class Solution {
                     s+=n[r];
                     if(s==tar)
                     {
-                        List<Integer> li=new ArrayList<>();
-                        li.add(n[i]);li.add(n[j]);li.add(n[l++]);li.add(n[r--]);
-                        ans.add(new ArrayList(li));
-                        //ans.add(Arrays.asList(n[i],n[j],n[l],n[r]));l++;r--;
+                        ans.add(Arrays.asList(n[i],n[j],n[l++],n[r--]));
                         while(l<r && n[l]==n[l-1])l++;
                         while(l<r && n[r]==n[r+1])r--;
                     }
