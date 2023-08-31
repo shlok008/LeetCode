@@ -22,8 +22,8 @@ class Solution {
                         while(l<r && n[l]==n[l-1])l++;
                         while(l<r && n[r]==n[r+1])r--;
                     }
-                    else if(n[i]+n[j]+n[l]+n[r]>tar) {r--;while(l<r && n[r]==n[r+1])r--;}
-                    else {l++;while(l<r && n[l]==n[l-1])l++;}
+                    else if(n[i]+n[j]+n[l]+n[r]>tar) r--;
+                    else l++;
                 }
                 j++;
                 while(j<n.length && n[j]==n[j-1])j++;
@@ -34,4 +34,3 @@ class Solution {
         return ans;
     }
 }
-
