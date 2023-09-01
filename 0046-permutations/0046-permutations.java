@@ -1,28 +1,28 @@
 class Solution {
-    public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
-        Arrays.sort(nums);
-        find(nums, nums.length, 0, ans);
-        return ans;
-    }
-    public static void find(int[] arr, int n, int ind, List<List<Integer>> ans){
-        if(ind == n){
-            List<Integer> ds = new ArrayList<>();
-            for(int it : arr){
-                ds.add(it);
-            }
-            ans.add(ds);
+    void per(boolean flag[],int []nums,List<Integer> l,List<List<Integer>> ds)
+    {
+        if(l.size()==nums.length)
+        {
+            ds.add(new ArrayList<>(l));
             return;
         }
-        for(int i=ind; i<n;i++){
-            swap(arr, i, ind);
-            find(arr, n, ind+1, ans);
-            swap(arr, i, ind);
+        for(int i=0;i<nums.length;++i)
+        {
+            if(!flag[i]) 
+            {
+                //if(i!=0 && nums[i]==nums[i-1]) continue;
+                flag[i]=true;
+                l.add(nums[i]);
+                per(flag,nums,l,ds);
+                l.remove(l.size()-1);
+                flag[i]=false;
+            }   
         }
     }
-    public static void swap(int[] arr, int si, int ei){
-        int t = arr[si];
-        arr[si] = arr[ei];
-        arr[ei] = t;
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> ans=new ArrayList<>();
+        boolean flag[]=new boolean[nums.length];
+        per(flag,nums,new ArrayList<>(),ans);
+        return ans;
     }
 }
