@@ -1,13 +1,5 @@
 class Solution {
-    /*void rec(int sum,int ind,List<Integer> l,int[]n, int k)
-    {
-        if(k==sum){System.out.print(l);return;}
-        if(ind==n.length)return;
-        l.add(n[ind]);
-        rec(sum+n[ind],ind+1,l,n,k);
-        l.remove(l.size()-1);
-        rec(sum,ind+1,l,n,k);
-    }*/
+
     public int subarraySum(int[] n, int k) {
         HashMap<Integer,Integer> hm=new HashMap<>();
         int s=0;
