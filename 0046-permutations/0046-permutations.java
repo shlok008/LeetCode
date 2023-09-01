@@ -23,6 +23,7 @@ class Solution {
         List<List<Integer>> ans=new ArrayList<>();
         boolean flag[]=new boolean[nums.length];
         per(flag,nums,new ArrayList<>(),ans);
+        System.gc();
         return ans;
     }
 }
