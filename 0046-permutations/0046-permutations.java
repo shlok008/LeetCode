@@ -1,25 +1,28 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
-    List<List<Integer>> list = new ArrayList<>();
-    // Arrays.sort(nums); // not necessary
-    backtrack(list, new ArrayList<>(), nums);
-    return list;
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        find(nums, nums.length, 0, ans);
+        return ans;
     }
-
-    void backtrack(List<List<Integer>> list,List<Integer> tempList,int[] nums)
-    {
-        if(tempList.size() == nums.length){
-            list.add(new ArrayList<>(tempList));
-        } 
-        else
-        {
-            for(int i = 0; i < nums.length; i++)
-            { 
-                if(tempList.contains(nums[i])) continue; // element already exists, skip
-                tempList.add(nums[i]);
-                backtrack(list, tempList, nums);
-                tempList.remove(tempList.size() - 1);
+    public static void find(int[] arr, int n, int ind, List<List<Integer>> ans){
+        if(ind == n){
+            List<Integer> ds = new ArrayList<>();
+            for(int it : arr){
+                ds.add(it);
             }
+            ans.add(ds);
+            return;
         }
+        for(int i=ind; i<n;i++){
+            swap(arr, i, ind);
+            find(arr, n, ind+1, ans);
+            swap(arr, i, ind);
+        }
+    }
+    public static void swap(int[] arr, int si, int ei){
+        int t = arr[si];
+        arr[si] = arr[ei];
+        arr[ei] = t;
     }
 }
