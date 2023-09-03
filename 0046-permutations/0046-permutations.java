@@ -8,7 +8,9 @@ class Solution {
         }
         for(int i=0;i<nums.length;++i)
         {
-            if(!flag[i]) 
+            if (flag[i] || (i > 0 && nums[i] == nums[i-1] && !flag[i-1])) 
+                continue;
+            if(!flag[i])
             {
                 //if(i!=0 && nums[i]==nums[i-1]) continue;
                 flag[i]=true;
@@ -19,7 +21,8 @@ class Solution {
             }   
         }
     }
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute(int[] nums) 
+    {
         List<List<Integer>> ans=new ArrayList<>();
         boolean flag[]=new boolean[nums.length];
         per(flag,nums,new ArrayList<>(),ans);
