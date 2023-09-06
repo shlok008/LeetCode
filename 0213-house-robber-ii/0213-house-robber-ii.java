@@ -12,7 +12,6 @@ class Solution {
         Arrays.fill(dp,-1);
         int a=rec(0,num.length-2,num,dp);
         Arrays.fill(dp,-1);
-        int b=rec(1,num.length-1,num,dp);
-        return Math.max(a,b);
+        return Math.max(a,rec(1,num.length-1,num,dp));
     }
 }
