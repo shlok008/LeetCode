@@ -8,7 +8,7 @@ class Solution {
     }
     public int rob(int[] num){
         if(num.length==1) return num[0];
-        int[] dp=new int[num.length+1];
+        int[] dp=new int[num.length-1];
         Arrays.fill(dp,-1);
         int a=rec(0,num.length-2,num,dp);
         Arrays.fill(dp,-1);
